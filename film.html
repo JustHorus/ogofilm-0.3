@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGOfilm.online - твои любимые сериалы и фильмы</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonticons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/catalog.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="header">
+                <div>
+                    <a href="/" class="logo">
+                        <span class="logo_img"></span>
+                        <span class="logo_text_1">OGO</span>
+                        <span class="logo_text_2">film</span>
+                    </a>
+                </div>
+
+                <div class="burger_menu">
+                    <span></span>
+                </div>
+    
+                <nav data-da=".login_mobile, 767, 1" class="login">
+                    <ul class="login_list">
+                        <li><a class="login_btn popup_btn" rel="popup_login" href="#">Вход</a></li>
+                        <li><a class="login_btn popup_btn" rel="popup_reg" href="#">Регистрация</a></li>
+                    </ul>
+                </nav>
+
+                <div class="login_mobile">
+                    <div class="login_img">
+                        <img class="login_img_size" src="/img/avatar.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav">
+                <div class="nav_mobile"></div>
+                <nav>
+                    <ul class="nav_links">
+                        <li><a class="nav_link" href="#">Фильмы</a></li>
+                        <li><a class="nav_link" href="#">Сериалы</a></li>
+                        <li><a class="nav_link" href="#">Мультфильмы</a></li>
+                    </ul>
+                </nav>
+
+                <form data-da=".nav_mobile, 767, first" class="nav_srch">
+                    <input class="nav_srch_input" type="text" placeholder="Поиск...">
+                    <button class="nav_srch_btn" type='submit'></button>
+                </form>
+            </div>
+
+            <div class="popup popup_login">
+                <div class="overlay popup_closed"></div>
+                <div class="popup_window">
+                    <div class="popup_close popup_closed">
+                        <span></span>
+                    </div>
+                    <form class="popup_content">
+                        <div class="popup_title">Вход на сайт</div>
+                        <img class="popup_login_img" src="/img/avatar.png" alt="">
+                        <input type="text" placeholder="Электронная почта/Логин" name="login" class="popup_input">
+                        <input type="password" placeholder="Пароль" name="psw" class="popup_input">
+                        <div class="popup_notsave">
+                            Запомнить?
+                            <input type="checkbox" checked name="login_notsave">
+                        </div>
+                        <input value="Вход" type="submit" class="login_btn popup_login_btn">
+                        <div class="popup_another_log">
+                            <a class="popup_another_log_sort popup_btn" rel="popup_reg" href="#">Регистрация</a>
+                            <a class="popup_another_log_sort popup_btn" rel="popup_fpsw" href="#">Забыли пароль?</a>
+                        </div> 
+                   </form>
+                </div>
+            </div>
+
+            <div class="popup popup_reg">
+                <div class="overlay popup_closed"></div>
+                <div class="popup_window popup_window_reg">
+                    <div class="popup_close popup_closed">
+                        <span></span>
+                    </div>
+                    <form class="popup_content">
+                        <div class="popup_title">Регистрация</div>
+                        <img class="popup_login_img" src="/img/avatar.png" alt="">
+                        <input type="email" placeholder="Электронная почта" name="email" class="popup_input">
+                        <input type="text" placeholder="Логин" name="login" class="popup_input">
+                        <input type="password" placeholder="Пароль" name="psw" class="popup_input">
+                        <input type="password" placeholder="Повторите пароль" name="psw1" class="popup_input">
+                        <div class="popup_login_not_save">
+                            <input id="login_rules" type="checkbox">
+                            <label for="login_rules">Я согласен с <a href="#">правилами сайта</a></label>
+                        </div>
+                        <input value="Регистрация" type="submit" class="login_btn popup_login_btn">
+                   </form>
+                </div>
+            </div>
+
+            <div class="popup popup_fpsw">
+                <div class="overlay popup_closed"></div>
+                <div class="popup_window popup_window_fpsw">
+                    <div class="popup_close popup_closed">
+                        <span></span>
+                    </div>
+                    <form class="popup_content">
+                        <div class="popup_title">Востановление пароля</div>
+                        <img class="popup_login_img" src="/img/avatar.png" alt="">
+                        <div class="popup_fpsw_send">
+                            На адресс вашей электронной почты будет отправленна ссылка для сброса пароля
+                        </div>
+                        <input type="email" placeholder="Введите ваш email" name="email" class="popup_input">
+                        <input value="Отправить" type="submit" class="login_btn popup_login_btn">
+                   </form>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="main_head">
+                <div class="main_title _icon-movie">
+                    <a href="#"><h2 class="title_name">Фильмы</h2></a>
+                </div>
+
+               <div data-da=".login_mobile, 767, 2" class="filter">
+                    <div class="filter_name">
+                        <h3 class="filter_sort">
+                            Сортировка 
+                            <span class="_icon-down"></span>
+                        </h3>
+                        <ul class="filter_sub _fsort">
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Новинки</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Популярные</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Сейчас смотрят</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter_name">
+                        <h3 class="filter_sort">
+                            Жанр
+                            <span class="_icon-down"></span>
+                        </h3>
+                        <ul class="filter_sub _fctgry">
+                            <li class="try">
+                                <input type="checkbox" checked>
+                                <a class="filter_sub1" rel="biografy" href="#">Биография</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a class="filter_sub1" rel="action" href="#">Боевик</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a class="filter_sub1" rel="west_action" href="#">Вестерн</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Военный</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Детектив</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Документальный</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Драма</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Исторический</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Комедия</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Короткометражка</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Криминал</a>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Мелодрама</a>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Мистика</a>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Мультфильм</a>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Мюзикл</a>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Приключения</a>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Семейный</a>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Спорт</a>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Триллер</a>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Ужасы</a>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Фантастика</a>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Фэнтези</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter_name">
+                        <h3 class="filter_sort">
+                            Страна 
+                            <span class="_icon-down"></span>
+                        </h3>
+                        <ul class="filter_sub _fsort">
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Украина</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">США</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Англия</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Франция</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Индия</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Китай</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Россия</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Финлядия</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Австралия</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Испания</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Бразилия</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">Канада</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter_name">
+                        <h3 class="filter_sort">
+                            Год 
+                            <span class="_icon-down"></span>
+                        </h3>
+                        <ul class="filter_sub _fyears _fyear">
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2000</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2001</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2002</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2003</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2004</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2005</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2006</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2007</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2008</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2009</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2010</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2011</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2012</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2013</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2014</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2015</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2016</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2017</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2018</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2019</a>
+                            </li>
+
+                            <li>
+                                <input type="checkbox">
+                                <a href="#">2020</a>
+                            </li>
+                        </ul>
+                    </div>
+               </div>
+            </div>
+
+            <div class="selected_filtr">
+                <div class="selected_filtr_frame biografy" >
+                    <a href="#" class="selected_filtr_name">Биография</a>
+                    <a href="#" class="selected_filtr_close _icon-close"></a>
+                </div>
+
+                <div class="selected_filtr_frame action">
+                    <a href="#" class="selected_filtr_name">Боевик</a>
+                    <a href="#" class="selected_filtr_close _icon-close"></a>
+                </div>
+
+                <div class="selected_filtr_frame west_action">
+                    <a href="#" class="selected_filtr_name">Вестерн</a>
+                    <a href="#" class="selected_filtr_close _icon-close"></a>
+                </div>
+            </div>
+
+            <section>
+                <div class="content">
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/1.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/2.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/3.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/4.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/5.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/6.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/1.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/2.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/3.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/4.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/5.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/6.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/1.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/2.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/3.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/4.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/5.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/6.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/1.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/2.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/3.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/4.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/5.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_block">
+                        <div class="content_sec">
+                            <div class="content_poster">
+                                <img class="content_img" src="img/6.jpg" alt="">
+                                <a href="#" class="content_player _icon-play"></a>
+                            </div>
+                            <div class="content_name">
+                                <a href="#">
+                                    <h2>
+                                        Родные
+                                    </h2>
+                                </a>
+                            </div>
+                            <div class="content_desc">
+                                2020, TS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="b_navigation">
+                <div class="nav_prev">
+                    <a class="btn_navigation _icon-arrow-left" href="#"></a>
+                    <a class="btn_navigation _btn_nav_prev" href="#">Пред.</a>
+                </div>
+                <ul class="navigation">
+                    <li><a class="btn_navigation" href="#">1</a></li>
+                    <li><a class="btn_navigation" href="#">2</a></li>
+                    <li><a class="btn_navigation" href="#">3</a></li>
+                    <li><a class="btn_navigation" href="#">4</a></li>
+                    <li><a class="btn_navigation" href="#">5</a></li>
+                    <li><a class="btn_navigation" href="#">6</a></li>
+                    <li><a class="btn_navigation" href="#">7</a></li>
+                </ul>
+                <div class="nav_next">
+                    <a class="btn_navigation _btn_nav_next" href="#">След.</a>
+                    <a class="btn_navigation _icon-arrow-rigth" href="#"></a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer">
+                <div class="slogan">
+                    <h3>OGOfilm.online - твои любимые сериалы и фильмы</h3>
+                    <h1 data-da=".about_mobile, 992, first" class="about">© 2021, OGOfilm.online - это смотреть фильмы и сериалы онлайн в хорошем качестве 720p hd, FullHD бесплатно и без регистрации на OGOfilm                                                                      </h1>
+                </div>
+                <nav>
+                    <ul class="contact_us">
+                        <li><a href="#">Обратная связь</a></li>
+                        <li><a href="#">Правообладателям</a></li>
+                    </ul>
+                </nav>
+
+                <div class="about_mobile"></div>
+            </div>
+        </footer>
+
+    </div>
+
+    
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/dynamicAdapt.js"></script>
+    
+</body>
+</html>

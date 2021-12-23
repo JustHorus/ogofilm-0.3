@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGOfilm.online - твои любимые сериалы и фильмы</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonticons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/view.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="header">
+                <div>
+                    <a href="/" class="logo">
+                        <span class="logo_img"></span>
+                        <span class="logo_text_1">OGO</span>
+                        <span class="logo_text_2">film</span>
+                    </a>
+                </div>
+
+                <div class="burger_menu">
+                    <span></span>
+                </div>
+    
+                <nav data-da=".login_mobile, 767, 1" class="login">
+                    <ul class="login_list">
+                        <li><a class="login_btn popup_btn" rel="popup_login" href="#">Вход</a></li>
+                        <li><a class="login_btn popup_btn" rel="popup_reg" href="#">Регистрация</a></li>
+                    </ul>
+                </nav>
+
+                <div class="login_mobile">
+                    <div class="login_img">
+                        <img class="login_img_size" src="/img/avatar.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav">
+                <div class="nav_mobile"></div>
+                <nav>
+                    <ul class="nav_links">
+                        <li><a class="nav_link" href="#">Фильмы</a></li>
+                        <li><a class="nav_link" href="#">Сериалы</a></li>
+                        <li><a class="nav_link" href="#">Мультфильмы</a></li>
+                    </ul>
+                </nav>
+
+                <form data-da=".nav_mobile, 767, first" class="nav_srch">
+                    <input class="nav_srch_input" type="text" placeholder="Поиск...">
+                    <button class="nav_srch_btn" type='submit'></button>
+                </form>
+            </div>
+
+            <div class="popup popup_login">
+                <div class="overlay popup_closed"></div>
+                <div class="popup_window">
+                    <div class="popup_close popup_closed">
+                        <span></span>
+                    </div>
+                    <form class="popup_content">
+                        <div class="popup_title">Вход на сайт</div>
+                        <img class="popup_login_img" src="/img/avatar.png" alt="">
+                        <input type="text" placeholder="Электронная почта/Логин" name="login" class="popup_input">
+                        <input type="password" placeholder="Пароль" name="psw" class="popup_input">
+                        <div class="popup_notsave">
+                            Запомнить?
+                            <input type="checkbox" checked name="login_notsave">
+                        </div>
+                        <input value="Вход" type="submit" class="login_btn popup_login_btn">
+                        <div class="popup_another_log">
+                            <a class="popup_another_log_sort popup_btn" rel="popup_reg" href="#">Регистрация</a>
+                            <a class="popup_another_log_sort popup_btn" rel="popup_fpsw" href="#">Забыли пароль?</a>
+                        </div> 
+                   </form>
+                </div>
+            </div>
+
+            <div class="popup popup_reg">
+                <div class="overlay popup_closed"></div>
+                <div class="popup_window popup_window_reg">
+                    <div class="popup_close popup_closed">
+                        <span></span>
+                    </div>
+                    <form class="popup_content">
+                        <div class="popup_title">Регистрация</div>
+                        <img class="popup_login_img" src="/img/avatar.png" alt="">
+                        <input type="email" placeholder="Электронная почта" name="email" class="popup_input">
+                        <input type="text" placeholder="Логин" name="login" class="popup_input">
+                        <input type="password" placeholder="Пароль" name="psw" class="popup_input">
+                        <input type="password" placeholder="Повторите пароль" name="psw1" class="popup_input">
+                        <div class="popup_login_not_save">
+                            <input id="login_rules" type="checkbox">
+                            <label for="login_rules">Я согласен с <a href="#">правилами сайта</a></label>
+                        </div>
+                        <input value="Регистрация" type="submit" class="login_btn popup_login_btn">
+                   </form>
+                </div>
+            </div>
+
+            <div class="popup popup_fpsw">
+                <div class="overlay popup_closed"></div>
+                <div class="popup_window popup_window_fpsw">
+                    <div class="popup_close popup_closed">
+                        <span></span>
+                    </div>
+                    <form class="popup_content">
+                        <div class="popup_title">Востановление пароля</div>
+                        <img class="popup_login_img" src="/img/avatar.png" alt="">
+                        <div class="popup_fpsw_send">
+                            На адресс вашей электронной почты будет отправленна ссылка для сброса пароля
+                        </div>
+                        <input type="email" placeholder="Введите ваш email" name="email" class="popup_input">
+                        <input value="Отправить" type="submit" class="login_btn popup_login_btn">
+                   </form>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="view_head">
+                <h2 class="view_head_name">Симпсоны</h2>
+                <h2 class="view_head_engname">The Simpsons</h2>
+            </div>
+
+            <div class="view_header">
+                <div class="view_poster">
+                    <img class="view_img" src="./img/8.jpg" alt="">
+                </div>
+
+                <div class="view_info">
+                    <div class="view_table">
+                        <div class="view_table_tr">
+                            <div class="view_table_td">Рейтинги:</div>
+                            <div class="view_table_th">MDb: 8.7 Кинопоиск: 8.4</div>
+                        </div>
+
+                        <div class="view_table_tr">
+                            <div class="view_table_td">Год:</div>
+                            <div class="view_table_th"><a href="#">1989</a></div>
+                        </div>
+
+                        <div class="view_table_tr">
+                            <div class="view_table_td">Жанр:</div>
+                            <div class="view_table_th">
+                                <a href="#">Комедия</a> 
+                                <a href="#">Мультсериал</a>
+                            </div>
+                        </div>
+
+                        <div class="view_table_tr">
+                            <div class="view_table_td">Страна:</div>
+                            <div class="view_table_th"><a href="#">США</a></div>
+                        </div>
+
+                        <div class="view_table_tr">
+                            <div class="view_table_td">Режиссер:</div>
+                            <div class="view_table_th">Микель Б. Андерсон, Марк Керклэнд, Стивен Дин Мур,
+                                Боб Андерсон</div>
+                        </div>
+
+                        <div class="view_table_tr">
+                            <div class="view_table_td">Актеры:</div>
+                            <div class="view_table_th">Дэн Кастелланета, Нэнси Картрайт, Гарри Ширер, 
+                                Джули Кавнер, Ярдли Смит, Хэнк Азария, 
+                                Памела Хейден, Тресс МакНилл, Карл Видерготт, 
+                                Мэгги Росвэлл и другие</div>
+                        </div>
+
+                        <div class="view_table_tr">
+                            <div class="view_table_td">Качество:</div>
+                            <div class="view_table_th">HDRip</div>
+                        </div>
+                    </div>
+
+                    <div class="view_subs">
+                        <p> Сатирический мультсериал рассказывает о жизни семейства Симпсонов и других жителей вымышленного городка 
+                            Спрингфилд, высмеивая уклад жизни американцев среднего 
+                            класса, поп-культуру, знаменитостей и телевидение, 
+                            политику и религию. В центре сюжета окажутся ленивый 
+                            любитель пива и работник атомной электростанции Гомер, 
+                            его жена и трудолюбивая домохозяйка Мардж, которая 
+                            постоянно вытаскивает мужа из неприятностей, а также 
+                            их дети — непослушный хулиган Барт, недооценённый 
+                            гениальный ребёнок Лиза и молчаливый младенец Мэгги.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="v_player">
+                <div class="bar bar_top">
+                    <ul id="bar_list" class="bar_list">
+                        <li><a id="myButton" href="javascript:void(0)" data-tab="1" data-ahoy="kinoplayertop" class="bar_btn bar_tab_trigger active">Плеер #1</a></li>
+                        <li><a id="myButton" href="javascript:void(0)" data-tab="2" data-ahoy="kinoplayertop" class="bar_btn bar_tab_trigger">Плеер #2</a></li>
+                        <li><a href="javascript:void(0)" data-tab="3" data-ahoy="kinoplayertop" class="bar_btn bar_tab_trigger">Трейлер</a></li>
+                    </ul>
+
+                    <div class="bar_dwork"><a class="bar_dwork_btn" href="#">Плеер не работает?</a></div>
+                </div>
+
+                <div>
+                    <div id="kinoplayertop" data-title="Симпсоны (сериал) (The Simpsons1989 – ...)" data-kinowidth="100%" data-kinoheight="528px"></div>
+                </div>
+
+                <!-- data-kinowidth="100%" data-kinoheight="528px" -->
+                
+                <div class="bar bar_bot">
+                    <div class="bar_raiting">
+                        <div class="bar_dis _icon-dislike">
+                            59
+                        </div>
+    
+                        <div class="bar_like _icon-like">
+                            1290
+                        </div>
+                    </div>
+
+                    <div class="addfavor">
+                        <a class="bar_dwork_btn" href="#">Добавить в избранное</a> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="comment">
+                <div class="comment_head _icon-comment">
+                    Отзывы (35):
+                </div>
+
+                <form class="comment_add">
+                    <input class="comment_user" type="text" placeholder="Гость">
+                    <textarea class="comment_ustext" name="user_comments" placeholder="Написать отзыв..."></textarea>
+                    <button class="comment_add_btn login_btn" type="submit">Добавить</button>
+                </form>
+
+                <div class="comment_view">
+                    <img class="comment_view_img" src="./img/avatar.png" alt="">
+                    <div class="comment_view_tab">
+                        <div class="comment_view_user">
+                            DubNaz X jonson 
+                            <span class="comment_view_time"> 18 февраля 2021 15:36</span>
+                        </div>
+
+                        <div class="comment_view_com">
+                            18 сезон 5 серія (це коли москалі захопили білорусь, ну ви зрозуміли суть)
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+        </main>
+
+        <footer>
+            <div class="footer">
+                <div class="slogan">
+                    <h3>OGOfilm.online - твои любимые сериалы и фильмы</h3>
+                    <h1 data-da=".about_mobile, 992, first" class="about">© 2021, OGOfilm.online - это смотреть фильмы и сериалы онлайн в хорошем качестве 720p hd, FullHD бесплатно и без регистрации на OGOfilm                                                                      </h1>
+                </div>
+                <nav>
+                    <ul class="contact_us">
+                        <li><a href="#">Обратная связь</a></li>
+                        <li><a href="#">Правообладателям</a></li>
+                    </ul>
+                </nav>
+
+                <div class="about_mobile"></div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="//kinoplayer.top/top.js"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/dynamicAdapt.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,174 @@
+main {
+    background: #ffffff;
+    padding: 2%;
+}
+
+.main_title {
+    display: flex;
+    margin-bottom: 1.5%;
+    align-items: center;
+
+    &::before {
+        font-size: 34px;
+        margin-right: 5px;
+    }
+}
+.title_name{
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #000000;
+}
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin-bottom: 2%;
+    justify-content: space-between;
+    
+    &_block {
+        width: 15%;
+        margin: 0 0 2% 0;
+    }
+
+    &_sec {
+        text-align: center;
+    }
+
+    &_poster {
+        margin: 0;
+        padding: 0 0 150% 0;
+        overflow: hidden;
+        position: relative;
+    }
+
+    &_poster:hover &_player {
+        opacity: 1;
+    }
+
+    &_img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        transform: translate3d( -50%, -50%, 0);
+        object-fit: cover;
+    }
+
+    &_player {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        background-color: rgba(3, 0, 0, 0.35);
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        transition: opacity 0.2s linear;
+
+        &::before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+    }
+
+    &_name {
+        max-width: 100%;
+
+        & h2 {
+            margin: 3% 0 0 0;
+            width: 100%;
+            color: #000000;   
+            font-size: 20px;
+            white-space: nowrap; /* Запрещаем перенос строк */
+            overflow: hidden; /* Обрезаем все, что не помещается в область */
+            text-overflow: ellipsis; /* Добавляем многоточие */
+        }
+    }
+
+    &_desc {
+        color: #818181;
+        font-size: 20px;
+    }
+}
+
+
+// ===============adaptive===========
+
+@media (max-width:1200px) {
+    .content_name h2 {
+        font-size: 16px;
+    }
+    .content_desc {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+//=========================== 992px ====================
+
+@media (max-width:992px) {
+    .main_title::before {
+        font-size: 24px;
+    }
+    .title_name {
+        font-size: 30px;
+    }
+    .content_name h2 {
+        font-size: 14px;
+    }
+    .content_desc {
+        font-size: 14px;
+    }
+}
+
+
+// ================================== 640px =================
+
+@media (max-width:640px) {
+    main {
+        padding: 5%;
+    }
+    .main_title {
+        margin-bottom: 2%;
+    }
+    .content {
+        &_block {
+            width: 47%;
+            margin: 0 0 3% 6%;
+
+            &:nth-child(odd) {
+                margin: 0;
+            }
+        }
+
+        &_name h2 {
+            font-size: 16px;
+        }
+
+        &_desc {
+            font-size: 16px;
+        }
+    }
+}
+
+    
+@media (max-width:480px) {
+    .main_title {
+        margin-top: 3%;
+    }
+}

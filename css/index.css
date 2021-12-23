@@ -1,0 +1,153 @@
+@charset "UTF-8";
+main {
+  background: #ffffff;
+  padding: 2%;
+}
+
+.main_title {
+  display: flex;
+  margin-bottom: 1.5%;
+  align-items: center;
+}
+.main_title::before {
+  font-size: 34px;
+  margin-right: 5px;
+}
+
+.title_name {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin-bottom: 2%;
+  justify-content: space-between;
+}
+.content_block {
+  width: 15%;
+  margin: 0 0 2% 0;
+}
+.content_sec {
+  text-align: center;
+}
+.content_poster {
+  margin: 0;
+  padding: 0 0 150% 0;
+  overflow: hidden;
+  position: relative;
+}
+.content_poster:hover .content_player {
+  opacity: 1;
+}
+.content_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate3d(-50%, -50%, 0);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.content_player {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: rgba(3, 0, 0, 0.35);
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: opacity 0.2s linear;
+}
+.content_player::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.content_name {
+  max-width: 100%;
+}
+.content_name h2 {
+  margin: 3% 0 0 0;
+  width: 100%;
+  color: #000000;
+  font-size: 20px;
+  white-space: nowrap;
+  /* Запрещаем перенос строк */
+  overflow: hidden;
+  /* Обрезаем все, что не помещается в область */
+  text-overflow: ellipsis;
+  /* Добавляем многоточие */
+}
+.content_desc {
+  color: #818181;
+  font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  .content_name h2 {
+    font-size: 16px;
+  }
+
+  .content_desc {
+    font-size: 16px;
+  }
+}
+@media (max-width: 992px) {
+  .main_title::before {
+    font-size: 24px;
+  }
+
+  .title_name {
+    font-size: 30px;
+  }
+
+  .content_name h2 {
+    font-size: 14px;
+  }
+
+  .content_desc {
+    font-size: 14px;
+  }
+}
+@media (max-width: 640px) {
+  main {
+    padding: 5%;
+  }
+
+  .main_title {
+    margin-bottom: 2%;
+  }
+
+  .content_block {
+    width: 47%;
+    margin: 0 0 3% 6%;
+  }
+  .content_block:nth-child(odd) {
+    margin: 0;
+  }
+  .content_name h2 {
+    font-size: 16px;
+  }
+  .content_desc {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .main_title {
+    margin-top: 3%;
+  }
+}/*# sourceMappingURL=index.css.map */
